@@ -1,0 +1,21 @@
+<%= form_with(model: room) do |form| %>
+  <% if room.errors.any? %>
+    <div style="color: red; display: inline-block; margin-bottom: 10px;">
+      <h2 style="display: inline-block; margin-right: 5px;"><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+      <ul style="display: inline-block;">
+        <% room.errors.each do |error| %>
+          <li style="display: inline-block; margin-right: 10px;"><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div style="display: inline-block; margin-right: 10px;">
+    <%= form.label :name, style: "display: inline-block; margin-right: 5px;" %>
+    <%= form.text_field :name, style: "display: inline-block;" %>
+  </div>
+
+  <div style="display: inline-block;">
+    <%= form.submit(style: "display: inline-block;") %>
+  </div>
+<% end %>

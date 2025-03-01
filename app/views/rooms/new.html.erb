@@ -1,0 +1,15 @@
+<% content_for :title, "New Room" %>
+
+<div class="container mt-5" >
+
+  <h1 class="mb-4 text-center">New Room</h1>
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <div class="card p-4 shadow-sm mb-4">  <!-- Added margin-bottom to the card -->
+        <%= render "form", room: @room %>
+    </div>
+
+    <div class="text-center mt-4">
+        <%= button_to "Back to Rooms", rooms_path, method: :get, class: "btn btn-secondary px-4 py-2" %>
+    </div>
+  </div>
+</div>

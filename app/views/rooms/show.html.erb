@@ -1,0 +1,17 @@
+<p id="notice" class="text-success"><%= notice %></p>
+
+<turbo-frame id="room">
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <%= render @room %>
+
+    <%= button_to "Edit", edit_room_path(@room), method: :get, class: "btn btn-success" %>
+    <%= button_to "Back", rooms_path, method: :get, "data-turbo-frame": "_top", class: "btn btn-secondary" %>
+  </div>
+</turbo-frame>
+
+<div id="messages">
+  <%= render @room.messages %>
+</div>
+
+<turbo-frame id="new_message" src="<%= @room.id %>/messages/new" target="_top">
+</turbo-frame>
