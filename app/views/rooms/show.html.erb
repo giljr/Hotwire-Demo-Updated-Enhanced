@@ -1,9 +1,10 @@
+<%= turbo_stream_from @room %>
 <turbo-frame id="room">
   <div style="display: flex; align-items: center; gap: 10px;">
     <%= render @room %>
 
-    <%= button_to "Edit", edit_room_path(@room), method: :get, class: "btn btn-success" %>
-    <%= button_to "Back", rooms_path, method: :get, "data-turbo-frame": "_top", class: "btn btn-secondary" %>
+    <%= button_to "Edit", edit_room_path(@room), method: :get %>
+    <%= button_to "Back", rooms_path, method: :get, "data-turbo-frame": "_top" %>
   </div>
 </turbo-frame>
 

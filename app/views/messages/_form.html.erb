@@ -1,0 +1,15 @@
+<turbo-frame id="new_message" target="_top">  
+    <%= form_with(model: [message.room, message], data:{ controller:"reset-form", action: "turbo:submit-end->reset-form#reset"}) do |form| %>
+        <% if message.errors.any? %>
+            <div style="color: red; margin-bottom: 10px; font-size: 0.8em;">
+                <% message.errors.each do |error| %>
+                    <%= error.full_message %>
+                <% end %>
+            </div>
+        <% end %> 
+    <div class="field">
+        <%= form.text_field :content, class: "form-control #{'is-invalid' if message.errors[:content].any?}" %>
+        <%= form.submit "Send" %>
+    </div>
+    <% end %>
+</turbo-frame>

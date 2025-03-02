@@ -4,4 +4,5 @@ class Room < ApplicationRecord
     validates :name, uniqueness: true
     validates :name, length: { minimum: 3 }
     validates :name, length: { maximum: 10 }
+    broadcasts
 end

@@ -4,9 +4,9 @@
   <% @rooms.each do |room| %>
     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
       <%= render room %>
-      <%= button_to "Show", room, class: "btn btn-success", method: :get %>
+      <%= button_to "Show", room, method: :get %>
     </div>
   <% end %>
 </div>
 
-<%= button_to "New room", new_room_path, method: :get, class: "btn btn-primary" %>
+<%= button_to "New room", new_room_path, method: :get %>
