@@ -23,8 +23,8 @@ class RoomsController < ApplicationController
 
     if @room.save
       respond_to do |format|
+        format.turbo_stream
         format.html { redirect_to @room, notice: "Room was successfully created." }
-        format.json { render :show, status: :created, location: @room }
       end
     else
       respond_to do |format|

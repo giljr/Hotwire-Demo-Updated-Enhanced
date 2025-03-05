@@ -1,12 +1,15 @@
+<%= turbo_stream_from "rooms" %>
 <h1>Rooms</h1>
 
 <div id="rooms">
   <% @rooms.each do |room| %>
     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
       <%= render room %>
-      <%= button_to "Show", room, method: :get %>
+      <%= button_to "Show", room, method: :get, class: "btn btn-primary btn-sm" %>
     </div>
   <% end %>
 </div>
 
-<%= button_to "New room", new_room_path, method: :get %>
+<turbo-frame id="new_room" src="<%= new_room_path %>" target="_top">
+</turbo-frame>
+<%#= button_to "New room", new_room_path, method: :get %>

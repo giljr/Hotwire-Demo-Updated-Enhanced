@@ -4,7 +4,7 @@
     <%= render @room %>
 
     <%= button_to "Edit", edit_room_path(@room), method: :get %>
-    <%= button_to "Back", rooms_path, method: :get, "data-turbo-frame": "_top" %>
+    <%= button_to "Back to rooms", rooms_path, method: :get, "data-turbo-frame": "_top" %>
   </div>
 </turbo-frame>
 

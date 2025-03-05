@@ -1,5 +1,6 @@
 <turbo-frame id="room">
-  <div>
+  <div style="display: flex; align-items: center; gap: 10px;">
     <%= render "form", room: @room %>
+    <%= button_to "Back", rooms_path, method: :get, "data-turbo-frame": "_top"%>
   </div>
 </turbo-frame>

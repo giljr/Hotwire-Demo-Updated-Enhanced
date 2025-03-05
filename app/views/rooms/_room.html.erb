@@ -1,4 +1,5 @@
-<p id="<%= dom_id room %>">
-    <strong>Name:</strong>
-    <%= room.name %>
-</p>
+<div id="<%= dom_id room %>" style="display: flex; align-items: center; gap: 10px;">
+  <strong>Name:</strong>
+  <%= room.name %>
+  <%#= button_to "Show", room, method: :get, class: "btn btn-primary btn-sm" %>
+</div>
